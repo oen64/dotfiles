@@ -1,0 +1,125 @@
+#ifdef COLOR
+*customization: -color
+#endif
+
+! Solarized colors
+
+#define S_base03  rgb:00/2b/36
+#define S_base02  rgb:07/36/42
+#define S_base01  rgb:58/6e/75
+#define S_base00  rgb:65/7b/83
+#define S_base0   rgb:83/94/96
+#define S_base1   rgb:93/a1/a1
+#define S_base2   rgb:ee/e8/d5
+#define S_base3   rgb:fd/f6/e3
+#define S_yellow  rgb:b5/89/00
+#define S_orange  rgb:cb/45/16
+#define S_red     rgb:dc/32/2f
+#define S_magenta rgb:d3/36/82
+#define S_violet  rgb:6c/71/c4
+#define S_blue    rgb:26/8b/d2
+#define S_cyan    rgb:2a/a1/98
+#define S_green   rgb:85/99/00
+
+! XTerm solarized colors, because XTerm lacks true color
+#define X_base03  rgb:1c/1c/1c
+#define X_base02  rgb:26/26/26
+#define X_base01  rgb:58/58/58
+#define X_base00  rgb:62/62/62
+#define X_base0   rgb:80/80/80
+#define X_base1   rgb:8a/8a/8a
+#define X_base2   rgb:e4/e4/e4
+#define X_base3   rgb:ff/ff/d7
+#define X_yellow  rgb:af/87/00
+#define X_orange  rgb:d7/5f/00
+#define X_red     rgb:d7/00/00
+#define X_magenta rgb:af/00/5f
+#define X_violet  rgb:5f/5f/af
+#define X_blue    rgb:00/87/ff
+#define X_cyan    rgb:00/af/af
+#define X_green   rgb:5f/87/00
+
+XTerm*background:      X_base03
+XTerm*foreground:      X_base0
+XTerm*highlightColor:  X_base02
+XTerm*cursorColor:     X_base1
+
+XTerm*color0:     X_base02
+XTerm*color1:     X_red
+XTerm*color2:     X_green
+XTerm*color3:     X_yellow
+XTerm*color4:     X_blue
+XTerm*color5:     X_magenta
+XTerm*color6:     X_cyan
+XTerm*color7:     X_base2
+XTerm*color8:     X_base03
+XTerm*color9:     X_orange
+XTerm*color10:    X_base01
+XTerm*color11:    X_base00
+XTerm*color12:    X_base0
+XTerm*color13:    X_violet
+XTerm*color14:    X_base1
+XTerm*color15:    X_base3
+
+XTerm*loginShell: true
+XTerm*scrollBar: false
+XTerm*termName: xterm-256color
+
+! default font
+XTerm*font: -misc-fixed-medium-*-*-*-14-*-*-*-*-*-iso10646-1
+! tiny font
+XTerm*font2: -misc-fixed-medium-*-*-*-8-*-*-*-*-*-iso10646-1
+! small font
+XTerm*font3: -misc-fixed-medium-*-*-*-12-*-*-*-*-*-iso10646-1
+! medium font
+XTerm*font4: -misc-fixed-medium-*-*-*-14-*-*-*-*-*-iso10646-1
+! large font
+XTerm*font5: -misc-fixed-medium-*-*-*-18-*-*-*-*-*-iso10646-1
+! huge font
+XTerm*font6: -misc-fixed-medium-*-*-*-20-*-*-*-*-*-iso10646-1
+
+XTerm*colorULMode: off
+XTerm*colorBDMode: off
+XTerm*colorITMode: off
+XTerm*colorUL:    X_yellow
+XTerm*colorBD:    X_blue
+
+! Enable clipboard for tmux, see tmux(1)
+XTerm*disallowedWindowOps: 20,21,SetXprop
+
+! rxvt unicode 
+URxvt*loginShell: true
+URxvt*scrollBar: false
+
+URxvt*font: xft:Inconsolata:style=Medium:size=11, xft:DejaVu Sans Mono:size=10
+
+URxvt*background:      S_base03
+URxvt*foreground:      S_base0
+URxvt*highlightColor:  S_base02
+URxvt*cursorColor:     S_base1
+
+URxvt*color0:     S_base02
+URxvt*color1:     S_red
+URxvt*color2:     S_green
+URxvt*color3:     S_yellow
+URxvt*color4:     S_blue
+URxvt*color5:     S_magenta
+URxvt*color6:     S_cyan
+URxvt*color7:     S_base2
+URxvt*color8:     S_base03
+URxvt*color9:     S_orange
+URxvt*color10:    S_base01
+URxvt*color11:    S_base00
+URxvt*color12:    S_base0
+URxvt*color13:    S_violet
+URxvt*color14:    S_base1
+URxvt*color15:    S_base3
+
+XConsole*background:          X_base03
+XConsole*foreground:          X_base0
+XConsole*cursorColor:         X_base1
+XConsole.text.geometry:       480x130
+XConsole.verbose:             true
+XConsole*iconic:              true
+XConsole*font:                fixed
+XConsole*text.scrollVertical: Never
