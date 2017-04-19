@@ -1,0 +1,140 @@
+NoGrabServer
+RestartPreviousState
+TitleFont "-misc-fixed-medium-r-semicondensed--13-120-75-75-C-60-iso10646-1"
+ResizeFont "-misc-fixed-medium-r-semicondensed--13-120-75-75-C-60-iso10646-1"
+MenuFont "-misc-fixed-medium-r-semicondensed--13-120-75-75-C-60-iso10646-1"
+#IconFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
+#IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
+#ClientBorderWidth
+#NoHighlight
+NoTitleHighlight 
+OpaqueMove
+NoDefaults
+DecorateTransient
+
+NoTitle
+{
+    "XConsole"
+    "chromium-browser"
+}
+
+Color
+{
+    BorderColor "rgb:26/26/26"
+    DefaultBackground "rgb:26/26/26"
+    DefaultForeground "rgb:af/87/00"
+    TitleBackground "rgb:0/0/0"
+    {
+        "XTerm" "rgb:1c/1c/1c"
+    }
+    TitleForeground "rgb:80/80/80"
+    MenuBackground "rgb:0/0/0"
+    MenuForeground "rgb:80/80/80"
+    MenuBorderColor "rgb:80/80/80"
+    MenuTitleBackground "rgb:1c/1c/1c"
+    MenuTitleForeground "rgb:80/80/80"
+#    IconBackground "rgb:2/a/9"
+#    IconForeground "gray85"
+#    IconBorderColor "gray85"
+#    IconManagerBackground "rgb:2/a/9"
+#    IconManagerForeground "gray85"
+}
+
+BorderWidth 1 			# Number of pixels for border around entire window
+FramePadding 1 			# Number of pixels between titlebar buttons & frame
+TitleButtonBorderWidth 0 	# Number of pixels for button border
+TitlePadding 2 			# Number of pixels around title buttons
+ButtonIndent 0 			# Larger seems to squash buttons together
+MenuBorderWidth 1 		# Number of pixels for menu border
+NoMenuShadows 			# No shadow behind the menu
+
+RightTitleButton ":delete" = f.delete
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+Button3 = : root : f.menu "defops"
+#
+#Button1 = m : window|icon : f.function "move-or-lower"
+#Button2 = m : window|icon : f.iconify
+#Button3 = m : window|icon : f.function "move-or-raise"
+#
+Button1 = : title : f.function "move-or-raise"
+Button3 = : title : f.raiselower
+#
+#Button1 = : icon : f.function "move-or-iconify"
+#Button2 = : icon : f.iconify
+#
+#Button1 = : iconmgr : f.iconify
+#Button2 = : iconmgr : f.iconify
+
+#
+# And a menus with the usual things
+#
+menu "defops"
+{
+"Twm"	f.title
+"XTerm"         !"xterm &"
+#""		f.nop
+#"Utilities"	f.menu "Utilities"
+#"Window Ops"    f.menu "Window Ops"
+""		f.nop
+#"Kill"		f.destroy
+#"Delete"	f.delete
+#"Refresh"	f.refresh
+#""		f.nop
+"(Re)Start"	f.menu "Restart"
+"Exit"		f.menu "Quit"
+}
+
+#menu "Utilities"
+#{
+#"Top"		!"xterm -T Top -n Top -e top &"
+#"Calculator"	!"xcalc &"
+#"Xman"		!"xman &"
+#"Xmag"		!"xmag &"
+#"Editres"	!"editres &"
+#""		f.nop
+##"XEmacs"	!"xemacs &"
+##"Mail"		!"xmh -font fixed &"
+##""		f.nop
+#"XLock"		!"xlock -mode random &"
+#"Reset X defaults" !"xrdb -load $HOME/.Xdefaults"
+#}
+#
+#menu "Window Ops"
+#{
+#"Iconify"	f.iconify
+#"Resize"	f.resize
+#"Move"		f.move
+#"Raise"		f.raise
+#"Lower"		f.lower
+#""		f.nop
+#"Focus"		f.focus
+#"Unfocus"	f.unfocus
+#"Show Iconmgr"	f.showiconmgr
+#"Hide Iconmgr"	f.hideiconmgr
+#}
+
+menu "Restart"
+{
+"Restart"	f.restart
+""		f.nop
+"twm"		f.startwm "twm"
+"fvwm"		f.startwm "fvwm"
+"cwm"		f.startwm "cwm"
+}
+menu "Quit"
+{
+"Don't quit"	f.nop
+ ""		f.nop
+"Really Quit"	f.quit
+}
